@@ -1,0 +1,14 @@
+<%= form_tag root_path, class: "form-inline", method: :get do %>
+  <div class="form-group mr-2 mb-3">
+    <%= label_tag :endpoint, {}, class: "sr-only" %>
+    <%= text_field_tag :endpoint, nil, class: "form-control", placeholder: "/people/1/" %>
+  </div>
+
+  <%= button_tag "GET", class: "btn btn-primary mb-3" %>
+<% end %>
+
+<p class="small">
+  Try...
+  <a href="#">/people/1/</a> or <a href="#">/planets/3/</a> 
+  or <a href="#">/starships/9/</a>
+</p>
