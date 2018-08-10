@@ -1,10 +1,11 @@
-<%= form_tag root_path, class: "form-inline", method: :get do %>
+<%= form_tag root_path, class: "form-inline", method: :get, remote: true do %>
   <div class="form-group mr-2 mb-3">
     <%= label_tag :endpoint, {}, class: "sr-only" %>
-    <%= text_field_tag :endpoint, nil, class: "form-control", placeholder: "/people/1/" %>
+    <%= text_field_tag :endpoint, nil, class: "form-control",
+                                       placeholder: "/" %>
   </div>
 
-  <%= button_tag "GET", class: "btn btn-primary mb-3" %>
+  <%= button_tag "GET", class: "btn btn-primary mb-3", id: "fetch" %>
 <% end %>
 
 <p class="small">
