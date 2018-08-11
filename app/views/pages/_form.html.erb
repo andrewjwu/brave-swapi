@@ -10,6 +10,11 @@
 
 <p class="small">
   Try...
-  <a href="#">/people/1/</a> or <a href="#">/planets/3/</a> 
-  or <a href="#">/starships/9/</a>
+  <% @example_urls.each do |url| %>
+    <%= link_to url, root_path(endpoint: url), remote: true %>
+
+    <% if @example_urls.last != url %>
+      or
+    <% end %>
+  <% end %>
 </p>

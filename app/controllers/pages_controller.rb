@@ -3,6 +3,8 @@ require 'open-uri'
 class PagesController < ApplicationController
   include PagesHelper
 
+  before_action :load_example_urls
+
   def home
     if @endpoint = params[:endpoint]
       @endpoint = "/#{@endpoint}" unless @endpoint.start_with?('/')
@@ -22,6 +24,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def load_example_urls
+    @example_urls = %w(/people/1/ /planets/3/ /starships/9/)
+  end
 
   def linkify(response)
     response.each do |key, value|
