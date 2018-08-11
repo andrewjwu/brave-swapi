@@ -1,3 +1,4 @@
 var obj = <%= @response.to_json.html_safe %>;
 var str = JSON.stringify(obj, null, 2);
+$('#endpoint').val('<%= @endpoint %>');
 $('.highlight code').html(str);
