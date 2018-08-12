@@ -31,7 +31,7 @@ module Validatable
 
   def check_numbers
     self.class::NUMBER_ATTRIBUTES.each do |attribute|
-      if !is_number?(send(attribute))
+      if !is_number?(send(attribute)) && !['n/a', 'unknown'].include?(send(attribute))
         errors.add(attribute, "must be a number")
       end
     end

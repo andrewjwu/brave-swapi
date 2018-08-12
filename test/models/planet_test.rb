@@ -5,7 +5,7 @@ class PlanetTest < ActiveSupport::TestCase
 
   @url_array_attributes = [:films, :residents]
   @url_attributes = [:url]
-  @number_attributes = [:population]
+  @number_attributes = [:population, :rotation_period, :orbital_period, :diameter]
 
   setup do
     @planet = @object = planets(:tatooine)
