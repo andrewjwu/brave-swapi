@@ -17,6 +17,27 @@ class Person < ApplicationRecord
   validate :check_url_array
   validate :check_iso_8601
 
+  def to_h
+    {
+      name: name,
+      height: height,
+      mass: mass,
+      hair_color: hair_color,
+      skin_color: skin_color,
+      eye_color: eye_color,
+      birth_year: birth_year,
+      gender: gender,
+      homeworld: homeworld,
+      films: films,
+      species: species,
+      vehicles: vehicles,
+      starships: starships,
+      created: created,
+      edited: edited,
+      url: url
+    }
+  end
+
   private
 
   def check_numbers
