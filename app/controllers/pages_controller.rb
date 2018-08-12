@@ -20,6 +20,8 @@ class PagesController < ApplicationController
       klass = case cached_endpoint[1]
               when "people"
                 Person
+              when "planets"
+                Planet
               end
 
       {
